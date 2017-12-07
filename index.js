@@ -52,7 +52,7 @@ if (isSimpleWindowsTerm) {
 	ansiStyles.blue.open = '\u001B[94m';
 }
 
-for (const key of Object.keys(ansiStyles)) {
+for (let key of Object.keys(ansiStyles)) {
 	ansiStyles[key].closeRe = new RegExp(escapeStringRegexp(ansiStyles[key].close), 'g');
 
 	styles[key] = {
