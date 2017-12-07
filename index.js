@@ -70,7 +70,7 @@ styles.visible = {
 };
 
 ansiStyles.color.closeRe = new RegExp(escapeStringRegexp(ansiStyles.color.close), 'g');
-for (const model of Object.keys(ansiStyles.color.ansi)) {
+for (let model of Object.keys(ansiStyles.color.ansi)) {
 	if (skipModels.has(model)) {
 		continue;
 	}
