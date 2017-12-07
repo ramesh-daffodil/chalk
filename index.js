@@ -92,7 +92,7 @@ for (let model of Object.keys(ansiStyles.color.ansi)) {
 }
 
 ansiStyles.bgColor.closeRe = new RegExp(escapeStringRegexp(ansiStyles.bgColor.close), 'g');
-for (const model of Object.keys(ansiStyles.bgColor.ansi)) {
+for (let model of Object.keys(ansiStyles.bgColor.ansi)) {
 	if (skipModels.has(model)) {
 		continue;
 	}
@@ -185,7 +185,7 @@ function applyStyle() {
 		ansiStyles.dim.open = '';
 	}
 
-	for (const code of this._styles.slice().reverse()) {
+	for (let code of this._styles.slice().reverse()) {
 		// Replace any instances already present with a re-opening code
 		// otherwise only the part of the string until said closing code
 		// will be colored, and the rest will simply be 'plain'.
