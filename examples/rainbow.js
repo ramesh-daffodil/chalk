@@ -12,7 +12,7 @@ function rainbow(str, offset) {
 
 	let hue = offset % 360;
 	const chars = [];
-	for (const c of str) {
+	for (let c of str) {
 		if (c.match(ignoreChars)) {
 			chars.push(c);
 		} else {

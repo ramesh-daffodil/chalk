@@ -30,7 +30,7 @@ function parseArguments(name, args) {
 	const chunks = args.trim().split(/\s*,\s*/g);
 	let matches;
 
-	for (const chunk of chunks) {
+	for (let chunk of chunks) {
 		if (!isNaN(chunk)) {
 			results.push(Number(chunk));
 		} else if ((matches = chunk.match(STRING_REGEX))) {
@@ -66,14 +66,14 @@ function parseStyle(style) {
 function buildStyle(chalk, styles) {
 	const enabled = {};
 
-	for (const layer of styles) {
-		for (const style of layer.styles) {
+	for (let layer of styles) {
+		for (let style of layer.styles) {
 			enabled[style[0]] = layer.inverse ? null : style.slice(1);
 		}
 	}
 
 	let current = chalk;
-	for (const styleName of Object.keys(enabled)) {
+	for (let styleName of Object.keys(enabled)) {
 		if (Array.isArray(enabled[styleName])) {
 			if (!(styleName in current)) {
 				throw new Error(`Unknown Chalk style: ${styleName}`);

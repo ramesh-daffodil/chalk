@@ -3,7 +3,7 @@ const chalk = require('..');
 const styles = require('ansi-styles');
 
 // Generates screenshot
-for (const key of Object.keys(styles)) {
+for (let key of Object.keys(styles)) {
 	let ret = key;
 
 	if (key === 'reset' || key === 'hidden' || key === 'grey') {
